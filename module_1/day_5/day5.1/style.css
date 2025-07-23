@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #e9ebee; /* Màu nền xám nhạt cho toàn bộ trang */
+    padding: 40px; /* Thêm khoảng trống xung quanh cửa sổ */
+}
+
+/* --- PHẦN MỚI: Khung cửa sổ trình duyệt --- */
+.browser-window {
+    max-width: 800px;
+    margin: 0 auto; /* Căn giữa */
+    border: 1px solid #dcdcdc;
+    border-radius: 8px; /* Bo tròn các góc của cửa sổ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ẩn các phần thừa khi bo góc */
+    border: 1px solid black;
+}
+
+.browser-bar {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    margin-right: -5px;
+}
+
+.control-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 6px;
+}
+
+.address-bar {
+    flex: 1; /* Chiếm hết không gian còn lại */
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: #555;
+    border: 1px solid #e0e0e0;
+    margin-right: 15px;
+}
+/* --- KẾT THÚC PHẦN MỚI --- */
+.bar {
+    height: 20px;
+    background: #4a90e2;
+}
+
+/* Container cho nội dung chính (không thay đổi) */
+.content-container {
+    /* Không cần style đặc biệt nữa vì đã có .browser-window */
+}
+
+/* Một lớp chung cho các khối để căn giữa chữ */
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Phần Header */
+.header {
+    background-color: #d6eaff;
+    padding: 30px 20px;
+}
+
+/* Các ô Feature */
+.feature {
+    padding: 50px 20px;
+}
+
+.feature-1 {
+    background-color: #ffeebc;
+    
+}
+.feature-2 {
+    background-color: #e0d8ff;
+   
+}
+.feature-3 {
+    background-color: #ffc9d1; 
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    grid-template-rows: auto auto; /* 2 hàng */
+    gap: 0px; /* Khoảng cách giữa các ô nếu muốn */
+  }
+  
+  .feature-1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .feature-2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .feature-3 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  
+  .signup {
+    grid-column: 1 / span 3; /* chiếm toàn bộ 3 cột */
+    grid-row: 2;
+    padding: 30px;
+}
+
+/* Phần Content */
+.content {
+    background-color: #f7f8fa;
+    min-height: 200px;
+}
+
+
+@media (max-width: 768px) {
+    .browser-window {
+        max-width: 90%; /* Điều chỉnh chiều rộng cho tablet */
+        padding: 0; /* Loại bỏ padding bên trong nếu cần */
+    }
+
+    /* Đảo ngược thứ tự hiển thị của content và signup */
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        order: -3; /* Đặt Content lên trên cùng trong main */
+        border-bottom: 1px solid #dcdcdc; /* Thêm border dưới cho Content */
+    }
+
+    .signup {
+        order: -2; /* Đặt Sign Up lên trên Content */
+        border-bottom: none; /* Xóa border dưới nếu đã có */
+        width: 50%; /* Chiếm 50% chiều rộng */
+        box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+    }
+
+    .feature {
+        flex: 1 1 50%; /* Mỗi feature chiếm 50% chiều rộng */
+        padding: 40px 20px; /* Điều chỉnh padding cho feature */
+        box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+    }
+
+    .feature-1 {
+        border-right: 1px solid #dcdcdc; /* Thêm border phải cho feature 1 */
+        border-bottom: 1px solid #dcdcdc; /* Thêm border dưới cho feature 1 */
+    }
+
+    .feature-2 {
+        border-bottom: 1px solid #dcdcdc; /* Thêm border dưới cho feature 2 */
+    }
+
+    .feature-3 {
+        flex: 1 1 50%; /* Feature 3 cũng chiếm 50% chiều rộng */
+        border-right: 1px solid #dcdcdc; /* Thêm border phải cho feature 3 */
+    }
+
+    /* Điều chỉnh lại màu và border cho phù hợp với hình ảnh tablet */
+    .signup {
+        background-color: #dbe9ff; /* Giữ màu xanh nhạt */
+        padding: 30px 20px;
+    }
+    .feature-1 {
+        background-color: #ffe8b5; /* Giữ màu vàng nhạt */
+    }
+    .feature-2 {
+        background-color: #e0d8ff; /* Giữ màu tím nhạt */
+    }
+    .feature-3 {
+        background-color: #ffc9d1; /* Giữ màu hồng nhạt */
+    }
+
+    /* Tạo hàng mới cho signup và features */
+    .signup-and-features {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #dcdcdc; /* Border cho cả khối này */
+    }
+
+    .features-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        order: -1;
+        border-bottom: none;
+    }
+    .feature {
+        width: 50%;
+    }
+
+    .feature-1 {
+        border-right: 1px solid #dcdcdc;
+    }
+    .feature-2 {
+        border-right: none; /* Không có border phải cho feature 2 */
+    }
+    .feature-3 {
+        border-right: 1px solid #dcdcdc; /* Border phải cho feature 3 */
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px; /* Giảm padding cho màn hình nhỏ hơn */
+    }
+
+    .browser-window {
+        max-width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+        border-radius: 0; /* Loại bỏ bo tròn góc */
+        box-shadow: none; /* Loại bỏ đổ bóng */
+    }
+
+    .browser-bar {
+        padding: 8px; /* Giảm padding thanh trình duyệt */
+    }
+
+    .window-controls {
+        margin-right: 10px; /* Giảm margin cho các nút điều khiển */
+    }
+
+    .address-bar {
+        font-size: 0.8rem; /* Giảm kích thước font thanh địa chỉ */
+        padding: 4px 8px; /* Giảm padding thanh địa chỉ */
+    }
+
+    main {
+        flex-direction: column; /* Đảm bảo các phần tử xếp chồng lên nhau */
+    }
+
+    .content,
+    .signup,
+    .features-container,
+    .feature {
+        width: 100%; /* Mỗi phần tử chiếm toàn bộ chiều rộng */
+        flex: none; /* Loại bỏ flex grow/shrink */
+        border-right: none; /* Loại bỏ border phải */
+        border-bottom: 1px solid #dcdcdc; /* Thêm border dưới cho tất cả các phần */
+        box-sizing: border-box;
+    }
+
+    .header {
+        border-bottom: 1px solid #dcdcdc; /* Đảm bảo header có border dưới */
+    }
+
+    .content {
+        order: -3; /* Đảm bảo Content ở trên cùng */
+    }
+
+    .signup {
+        order: -2; /* Đảm bảo Sign Up ở dưới Content */
+        background-color: #dbe9ff; /* Giữ màu xanh nhạt */
+    }
+
+    .features-container {
+        order: -1; /* Đảm bảo Features Container ở dưới Sign Up */
+        border-bottom: none; /* Loại bỏ border dưới nếu có */
+    }
+
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+        border-bottom: 1px solid #dcdcdc; /* Thêm border dưới cho từng feature */
+        border-right: none; /* Loại bỏ border phải */
+        padding: 30px 20px; /* Điều chỉnh padding */
+    }
+
+    .feature-3 {
+        border-bottom: none; /* Feature cuối cùng không có border dưới */
+    }
+}
