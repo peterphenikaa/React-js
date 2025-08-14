@@ -1,0 +1,117 @@
+doctype html
+html
+  head 
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css")
+  body 
+    //- img(src = "/images/image.png" alt="Image" width="80px")
+    //- h1= message 
+
+    //- h1 nội dung thẻ h1
+    //- h2 nội dung thẻ h2
+    //- p nội dung thẻ p
+
+    //- ul 
+    //-   li Danh sách 1
+    //-   li Danh sách 2
+    //-   li Danh sách 5
+    
+    p đây là 1 <b>đoạn văn</b> sử dụng thẻ p
+    p
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+      | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    p.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+
+    table 
+      thead
+        tr
+            th STT
+            th Họ tên
+            th SDT
+      tbody
+        tr
+            td 1
+            td Nguyen Van A
+            td 0123456789
+        tr
+            td 2
+            td Nguyen Van b
+            td 0123456722
+       
+    // đây là comment html
+    //- đây là comment pug
+
+    button(class="btn btn-success") Click Me! 
+    button(class="btn btn-primary") Click Me!
+ 
+    
+    - var name = "Nguyen Van A"
+    - var age = 20
+    - var phone = "0123456789"
+    div(class="info")
+     p= name
+     p tuổi của tôi là: #{age}
+     p điện thoại: #{phone}
+
+    - var htmlLink = '<a href="https://www.example.com">Example</a>'
+    div(class="link")
+      p !{htmlLink}
+
+   
+    -
+        var infoUser = {
+        name: "Nguyen Van A",
+        age: 20,
+        phone: "0123456789"
+        };
+    div(class="info") 
+      p Email: #{infoUser.name}
+
+    if infoUser.age > 18
+      p Bạn đã đủ tuổi trưởng thành.
+    else
+      p Bạn chưa đủ tuổi trưởng thành.
+    
+
+    - var statusAccount = "initial"
+    case statusAccount
+      when "initial"
+        p Tài khoản mới tạo
+      when "active"
+        p Tài khoản đang hoạt động
+      when "inactive"
+        p Tài khoản không hoạt động
+      default
+        p Trạng thái tài khoản không xác định
+
+
+    -
+      var listUser = [
+        "Le Van A",
+        "Le Van B",
+        "Le Van C"
+      ];
+    ul 
+      each item, index in listUser
+        li #{index + 1}. #{item}
+        
+    
+
+
+
+
+
+
+    script(src="/js/script.js")
+    <script src="https://cdn.jsdelivr.net/npm/jquery@5.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
